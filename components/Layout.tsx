@@ -67,32 +67,9 @@ const Layout: React.FunctionComponent<Props> = ({
                 <Header isOpened={isMobileMenuOpened} setHamburgerState={setMobileMenuOpened}/>
                 <Navigation isOpened={isMobileMenuOpened} setHamburgerState={setMobileMenuOpened}/>
                 <main>
-                    <motion.div
-                        initial={
-                            isMobile
-                            ? {y: -motionDirection * 70, opacity: 0}
-                            : {x: -motionDirection * 70, opacity: 0}
-                        }
-                        animate={
-                            isMobile
-                            ? {y: 0, opacity: 1}
-                            : {x: 0, opacity: 1}
-                        }
-                        exit={
-                            isMobile
-                            ? {y: motionDirection * 70, opacity: 0}
-                            : {x: motionDirection * 70, opacity: 0}
-                        }
-                        transition={{
-                            duration: 0.4,
-                            type: 'spring',
-                            mass: 0.5
-                        }}
-                    >
-                        <div id="main_wrapper" style={style}>
-                            {children}
-                        </div>
-                    </motion.div>
+                    <div id="main_wrapper" style={style}>
+                        {children}
+                    </div>
                 </main>
                 <div id="page_top" onClick={backToTop}>
                     <span id={'back-to-top-icon'}>
